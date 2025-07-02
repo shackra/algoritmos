@@ -7,6 +7,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 project(Algoritmos C)
 
 add_executable(bubble_sort ./bubble_sort.c)
+add_executable(binary_search ./binary_search.c)
 
 # misc
 file(CREATE_LINK "${CMAKE_BINARY_DIR}/compile_commands.json"
