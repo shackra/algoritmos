@@ -22,6 +22,19 @@ void print_array(int arreglo[], size_t len) {
   printf("\n");
 }
 
+void sort(int arreglo[], size_t len) {
+  for (int i = 0; i < len; i++) {
+    for (int j = 0; j < len - i - 1; j++) {
+      if (arreglo[j] > arreglo[j + 1]) {
+        // realiza el intercambio de posiciones
+        int tmp = arreglo[j];
+        arreglo[j] = arreglo[j + 1];
+        arreglo[j + 1] = tmp;
+      }
+    }
+  }
+}
+
 int main() {
   // NOLINTNEXTLINE(cppcoreguidelines-avoid-magic-numbers)
   int elementos[] = {25, 21, 19, 10, 7, 3, 2, 1};
@@ -30,16 +43,7 @@ int main() {
   printf("antes:\n");
   print_array(elementos, largo);
 
-  for (int i = 0; i < largo; i++) {
-    for (int j = 0; j < largo - i - 1; j++) {
-      if (elementos[j] > elementos[j + 1]) {
-        // realiza el intercambio de posiciones
-        int tmp = elementos[j];
-        elementos[j] = elementos[j + 1];
-        elementos[j + 1] = tmp;
-      }
-    }
-  }
+  sort(elementos, largo);
 
   printf("ahora:\n");
   print_array(elementos, largo);
