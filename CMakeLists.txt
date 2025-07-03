@@ -8,6 +8,9 @@ project(Algoritmos C)
 
 add_executable(bubble_sort ./bubble_sort.c)
 add_executable(binary_search ./binary_search.c)
+add_executable(two_crystal_balls ./pondering_my_crystal_balls.c)
+# Enlaza math.h
+target_link_libraries(two_crystal_balls PRIVATE m)
 
 # misc
 file(CREATE_LINK "${CMAKE_BINARY_DIR}/compile_commands.json"
