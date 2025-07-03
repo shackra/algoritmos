@@ -25,7 +25,8 @@ int find_optimal_height(const bool pisos[], size_t len) {
   // retrocedemos por la cantidad que saltamos
   i -= jmpBy;
 
-  for (int j = 0; j < jmpBy && i < len; j++, i++) {
+  // tratamos de romper la segunda bola de cristal
+  for (int j = 0; j <= jmpBy && i < len; j++, i++) {
     if (pisos[i]) {
       return i;
     }
