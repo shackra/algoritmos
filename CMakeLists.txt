@@ -6,9 +6,9 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS On)
 
 project(Algoritmos C)
 
-add_executable(bubble_sort ./bubble_sort.c)
-add_executable(binary_search ./binary_search.c)
-add_executable(two_crystal_balls ./pondering_my_crystal_balls.c)
+add_executable(bubble_sort ./codigo\ fuente/bubble_sort.c)
+add_executable(binary_search ./codigo\ fuente/binary_search.c)
+add_executable(two_crystal_balls ./codigo\ fuente/pondering_my_crystal_balls.c)
 # Enlaza math.h
 target_link_libraries(two_crystal_balls PRIVATE m)
 
