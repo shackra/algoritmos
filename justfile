@@ -7,8 +7,8 @@ default:
 [private]
 build:
 	mkdir -p build
-	cmake -B build -DCMAKE_BUILD_TYPE=Release
-	cmake --build build --config Release
+	cmake -B build -DCMAKE_BUILD_TYPE=Debug
+	cmake --build build --config Debug
 
 run PROGRAM: build
 	./build/{{PROGRAM}}{{ext}}
@@ -18,3 +18,4 @@ list:
 	@echo "binary_search"
 	@echo "bubble_sort"
 	@echo "two_crystal_balls"
+	@echo "queue"
