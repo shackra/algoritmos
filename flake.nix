@@ -61,6 +61,7 @@
               cmake-language-server
               gcc15Stdenv
               clang-tools
+              gdb
 
               nil
               just
