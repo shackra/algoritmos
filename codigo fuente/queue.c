@@ -10,7 +10,7 @@ typedef struct Node {
 } Node;
 
 Node NewNode(int value) {
-  Node node = {.value = value};
+  Node node = {.value = value, .next = nullptr};
   return node;
 }
 
@@ -46,8 +46,14 @@ Node *Pop(Queue *queue) {
   }
 
   queue->size--;
+  if (queue->size == 0) {
+    Node *tail = queue->tail;
+    queue->tail = nullptr;
+    return tail;
+  }
   Node *head = queue->head;
   queue->head = head->next;
+  head->next = nullptr;
 
   return head;
 }
@@ -76,5 +82,11 @@ int main() {
 
   Node three = NewNode(3);
   Push(&queue, &three);
+  Print(queue);
+  Pop(&queue);
+  Pop(&queue);
+  Pop(&queue);
+  Print(queue);
+  Push(&queue, &one);
   Print(queue);
 }
